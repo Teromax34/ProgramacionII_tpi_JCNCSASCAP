@@ -1,0 +1,11 @@
+#BlueJ class context
+#Wed Sep 16 08:32:03 ART 2026
+comment0.target=Empleado
+comment1.params=dni nombre apellido telefono especialidad
+comment1.target=Empleado(int, java.lang.String, java.lang.String, int, java.lang.String)
+comment2.target=int dniE()
+comment3.target=java.lang.String nombreE()
+comment4.target=java.lang.String apellidoE()
+comment5.target=int telefonoE()
+comment6.target=java.lang.String especialidadE()
+numComments=7
