@@ -1,7 +1,12 @@
 #BlueJ class context
-#Wed Sep 16 09:49:04 ART 2026
+#Sat Sep 19 14:35:46 ART 2026
 comment0.target=Dispositivo
-comment1.params=dni tipo marca modelo numeroSerie descripcionFalla
+comment1.params=id tipo marca modelo numeroSerie descripcionFalla
 comment1.target=Dispositivo(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
 comment2.target=int idD()
-numComments=3
+comment3.target=java.lang.String modeloD()
+comment4.target=java.lang.String fallaD()
+comment5.params=nuevaFalla
+comment5.target=void NuevaDescripcionFalla(java.lang.String)
+comment6.target=void verDispositivo()
+numComments=7

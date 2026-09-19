@@ -5,7 +5,7 @@ public class Dispositivo{
     private String modelo;
     private String numeroSerie;
     private String descripcionFalla;
-    public Dispositivo(int dni,String tipo,String marca,String modelo,String numeroSerie,String descripcionFalla)
+    public Dispositivo(int id,String tipo,String marca,String modelo,String numeroSerie,String descripcionFalla)
     {
         this.id = id;
         this.tipo = tipo;
@@ -16,5 +16,22 @@ public class Dispositivo{
     }
     public int idD(){
         return id;
+    }
+    public String modeloD(){
+        return modelo;
+    }
+    public String fallaD(){
+        return descripcionFalla;
+    }
+    public void NuevaDescripcionFalla(String nuevaFalla){
+        this.descripcionFalla = nuevaFalla;
+    }
+    public void verDispositivo(){
+        System.out.println("ID:"+id);
+        System.out.println("Tipo:"+tipo);
+        System.out.println("Marca:"+marca);
+        System.out.println("Modelo:"+modelo);
+        System.out.println("Numero de Serie:"+numeroSerie);
+        System.out.println("Descripcion de la Falla:"+descripcionFalla);
     }
 }

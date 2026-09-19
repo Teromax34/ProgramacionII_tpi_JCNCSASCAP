@@ -1,7 +1,7 @@
 #BlueJ class context
-#Wed Sep 16 09:49:03 ART 2026
+#Sat Sep 19 14:35:46 ART 2026
 comment0.target=Servicio
-comment1.params=id nombre descripcion Precio duracionEstimada
+comment1.params=id nombre descripcion precio duracionEstimada
 comment1.target=Servicio(int, java.lang.String, java.lang.String, double, int)
 comment2.target=int idS()
 comment3.target=double precioS()

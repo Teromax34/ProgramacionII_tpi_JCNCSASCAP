@@ -1,8 +1,17 @@
 #BlueJ class context
-#Wed Sep 16 09:49:50 ART 2026
+#Sat Sep 19 14:35:49 ART 2026
 comment0.target=Turno
-comment1.params=id fecha hora estado cliente dispositivo servicio empleado
-comment1.target=Turno(int, java.time.LocalDate, java.time.LocalTime, java.lang.String, Cliente, Dispositivo, Servicio, Empleado)
+comment1.params=id fechaIngreso horaIngreso fechaEntrega horaEntrega estado cliente dispositivo servicio empleado
+comment1.target=Turno(int, java.lang.String, int, java.lang.String, int, java.lang.String, Cliente, Dispositivo, Servicio, Empleado)
 comment2.target=int idT()
-comment3.target=java.lang.String estadoT()
-numComments=4
+comment3.target=java.lang.String verificarEstado()
+comment4.params=nuevoEstado
+comment4.target=void cambiarEstado(java.lang.String)
+comment5.target=Cliente verCliente()
+comment6.target=Servicio verServicio()
+comment7.params=nuevaFecha
+comment7.target=void cambiarFechaEntrega(java.lang.String)
+comment8.params=nuevaHora
+comment8.target=void cambiarHoraEntrega(int)
+comment9.target=void resumenTurno()
+numComments=10
