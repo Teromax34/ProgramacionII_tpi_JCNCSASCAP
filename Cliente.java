@@ -42,8 +42,25 @@ public class Cliente{
           for(Turno c : this.turnos){
                    System.out.println("ID del turno:"+c.idT());
               }
-          }
+    }
+
+    public void cambiarDireccion(String nuevaDireccion){
+        this.direccion = nuevaDireccion;
+    }
+    public void cambiarTelefono(int nuevoTelefono){
+        this.telefono = nuevoTelefono;
+    }
+    public void cambiarNombre(String nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
+    public void cambiarApellido(String nuevoApellido){
+        this.apellido = nuevoApellido;
+    }
+    public void cambiarDni(int nuevoDni){
+        this.dni = nuevoDni;
+    }
     
+
     public void verDatosCliente(){
         System.out.println("\nDATOS DEL CLIENTE\nDNI:"+dni);
         System.out.println("Nombre y Apellido:"+nombre+" "+apellido);

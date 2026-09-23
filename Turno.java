@@ -30,6 +30,8 @@ public class Turno{
     public String verificarEstado(){
         return estado;
     }
+
+
     public void cambiarEstado(String nuevoEstado){
         switch (nuevoEstado) {
             case "pendiente":
@@ -39,15 +41,9 @@ public class Turno{
                 this.estado = nuevoEstado;
                 break; 
             default:
-                System.out.println("Error");
+                System.out.println("Error, volver a ingresar");
                 break;
         }
-    }
-    public Cliente verCliente(){
-        return this.clientes;
-    }
-    public Servicio verServicio(){
-        return this.servicios;
     }
     public void cambiarFechaEntrega(String nuevaFecha){
                 this.fechaEntrega = nuevaFecha;
@@ -55,6 +51,15 @@ public class Turno{
     public void cambiarHoraEntrega(int nuevaHora){
                 this.horaEntrega = nuevaHora;
     }
+
+
+    public Cliente verCliente(){
+        return this.clientes;
+    }
+    public Servicio verServicio(){
+        return this.servicios;
+    }
+    
     public void resumenTurno(){
         System.out.println("------------------\nTURNO\nDni:" + clientes.dniC());
         System.out.println("Nombre y Apellido:" + clientes.nombreC()+" "+ clientes.apellidoC());

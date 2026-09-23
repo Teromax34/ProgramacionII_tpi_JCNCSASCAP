@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Cliente cliente = new Cliente(123, "Juan", "Perez", 1111, "Calle 1");
 
         Dispositivo dispositivo = new Dispositivo(

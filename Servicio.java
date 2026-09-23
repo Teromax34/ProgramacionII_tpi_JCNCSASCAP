@@ -19,4 +19,20 @@ public class Servicio{
     public double precioS(){
         return precio;
     }
+
+
+    public void cambiarNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public void cambiarDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+    public void cambiarPecio(double precio){
+        this.precio = precio;
+    }
+    public void cambiarDuracion(int duracionEstimada){
+        this.duracionEstimada = duracionEstimada;
+    }
+
+    
 }

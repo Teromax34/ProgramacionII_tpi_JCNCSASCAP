@@ -27,4 +27,23 @@ public class Empleado{
     public String especialidadE(){
         return especialidad;
     }
+
+
+    public void cambiarEspecialidad(String nuevaEspecialidad){
+        this.especialidad = nuevaEspecialidad;
+    }
+    public void cambiarTelefono(int nuevoTelefono){
+        this.telefono = nuevoTelefono;
+    }
+    public void cambiarNombre(String nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
+    public void cambiarApellido(String nuevoApellido){
+        this.apellido = nuevoApellido;
+    }
+    public void cambiarDni(int nuevoDni){
+        this.dni = nuevoDni;
+    }
+
+    
 }

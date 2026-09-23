@@ -26,6 +26,22 @@ public class Pago{
     public Turno verTurno(){
         return this.turnos;
     }
+
+
+    public void cambiarMontoAdicional(double montoAdicional){
+        this.montoAdicional = montoAdicional;
+    }
+    public void cambiarDescuento(double descuento){
+        this.descuento = descuento;
+    }
+    public void cambiarMedioPago(String medioPago){
+        this.medioPago = medioPago;
+    }
+    public void cambiarEstado(String estado){
+        this.estado = estado;
+    }
+
+    
     public void Factura(){
         System.out.println("FACTURA DE PAGO\nDni:" + turnos.verCliente().dniC());
         System.out.println("Nombre y Apellido:" + turnos.verCliente().nombreC()+" "+turnos.verCliente().apellidoC());

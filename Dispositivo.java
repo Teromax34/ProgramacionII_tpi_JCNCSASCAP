@@ -23,9 +23,26 @@ public class Dispositivo{
     public String fallaD(){
         return descripcionFalla;
     }
+
+
     public void NuevaDescripcionFalla(String nuevaFalla){
         this.descripcionFalla = nuevaFalla;
     }
+    public void cambiarMarca(String marca){
+        this.marca = marca;
+    }
+    public void cambiarModelo(String modelo){
+        this.modelo = modelo;
+    }
+    public void cambiarNumeroS(String numeroSerie){
+        this.numeroSerie = numeroSerie;
+    }
+    public void cambiarTipo(String tipo){
+        this.tipo = tipo;
+    }
+
+
+
     public void verDispositivo(){
         System.out.println("ID:"+id);
         System.out.println("Tipo:"+tipo);
