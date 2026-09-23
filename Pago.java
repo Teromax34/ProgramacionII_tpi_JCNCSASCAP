@@ -27,12 +27,12 @@ public class Pago{
         return this.turnos;
     }
     public void Factura(){
-        System.out.println("Dni:" + turnos.verCliente().dniC());
+        System.out.println("FACTURA DE PAGO\nDni:" + turnos.verCliente().dniC());
         System.out.println("Nombre y Apellido:" + turnos.verCliente().nombreC()+" "+turnos.verCliente().apellidoC());
         System.out.println("Direccion:" + turnos.verCliente().direccionC());
         System.out.println("Fecha:"+fecha);
         System.out.println("Medio de Pago:"+medioPago);
         System.out.println("Monto Total:" + montoTotal());
-        System.out.println("Monto Total con Descuento:" + aplicarDescuentos());
+        System.out.println("Monto Total con Descuento:" + aplicarDescuentos()+"\n");
     }
 }

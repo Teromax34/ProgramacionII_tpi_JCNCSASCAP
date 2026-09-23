@@ -45,7 +45,7 @@ public class Cliente{
           }
     
     public void verDatosCliente(){
-        System.out.println("DNI:"+dni);
+        System.out.println("\nDATOS DEL CLIENTE\nDNI:"+dni);
         System.out.println("Nombre y Apellido:"+nombre+" "+apellido);
         System.out.println("Telefono:"+telefono);
         System.out.println("Direccion:"+direccion);

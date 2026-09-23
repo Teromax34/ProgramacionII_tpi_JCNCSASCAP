@@ -56,12 +56,12 @@ public class Turno{
                 this.horaEntrega = nuevaHora;
     }
     public void resumenTurno(){
-        System.out.println("Dni:" + clientes.dniC());
+        System.out.println("------------------\nTURNO\nDni:" + clientes.dniC());
         System.out.println("Nombre y Apellido:" + clientes.nombreC()+" "+ clientes.apellidoC());
         System.out.println("Empleado que realizo la reparacion:" + empleados.nombreE()+" "+empleados.apellidoE());
         System.out.println("Modelo del Dispositivo:" + dispositivos.modeloD());
         System.out.println("Falla:" + dispositivos.fallaD());
         System.out.println("Estado:" + estado);
-        System.out.println("ID Dispositivo :" + dispositivos.idD()+" ID Servicio :"+servicios.idS());
+        System.out.println("ID Dispositivo :" + dispositivos.idD()+" ID Servicio :"+servicios.idS()+"\n------------------");
     }
 }
