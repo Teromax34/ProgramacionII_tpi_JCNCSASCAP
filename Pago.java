@@ -21,7 +21,7 @@ public class Pago{
             return montoAdicional + turnos.verServicio().precioS();
     }
     public double aplicarDescuentos(){
-        return montoTotal() * descuento;
+        return montoTotal() * (1-(descuento / 100));
     }
     public Turno verTurno(){
         return this.turnos;

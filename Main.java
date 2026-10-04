@@ -24,7 +24,7 @@ public class Main {
         );    
     
         Pago pago = new Pago(
-            1,200,0.80,"20/200/2000","mercadopago","pagado",turno1
+            1,200,20,"20/200/2000","mercadopago","pagado",turno1
         );
         cliente.verDatosCliente();
         cliente.agregarTurno(turno1);
