@@ -1,29 +1,27 @@
-public class Empleado{
-    private int dni;
-    private String nombre;
-    private String apellido;
-    private int telefono;
+import java.util.ArrayList;
+import java.util.List;
+public class Empleado extends Persona{
     private String especialidad;
-    public Empleado(int dni,String nombre,String apellido,int telefono,String especialidad)
-    {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
+    private List<Turno> turnos = new ArrayList<>();
+
+    public Empleado(int dni,String nombre,String apellido,int telefono,String especialidad){
+        super(dni, nombre, apellido, telefono);
         this.especialidad = especialidad;
     }
-    public int dniE(){
-        return dni;
+    public void agregarTurno(Turno... turnos){
+        for(Turno t: turnos){
+            this.turnos.add(t);
+        }
     }
-    public String nombreE(){
-        return nombre;
+    public void verTurnos(){
+        for(Turno t: turnos){
+            System.out.println("ID del turno: "+t.idT() +" - Estado: "+t.estado());
+        }
     }
-    public String apellidoE(){
-        return apellido;
+    public int cantidadTurnos(){
+        return this.turnos.size();
     }
-    public int telefonoE(){
-        return telefono;
-    }
+    
     public String especialidadE(){
         return especialidad;
     }
@@ -32,17 +30,12 @@ public class Empleado{
     public void cambiarEspecialidad(String nuevaEspecialidad){
         this.especialidad = nuevaEspecialidad;
     }
-    public void cambiarTelefono(int nuevoTelefono){
-        this.telefono = nuevoTelefono;
-    }
-    public void cambiarNombre(String nuevoNombre){
-        this.nombre = nuevoNombre;
-    }
-    public void cambiarApellido(String nuevoApellido){
-        this.apellido = nuevoApellido;
-    }
-    public void cambiarDni(int nuevoDni){
-        this.dni = nuevoDni;
+    public void datosEmpleado(){
+        System.out.println("------------------\nDni: "+dni());
+        System.out.println("Nombre y Apellido:"+nombre()+" "+apellido());
+        System.out.println("Telefono: "+telefono());
+        System.out.println("Especialidad: "+especialidad);
+        System.out.println("Cantidad de Turnos: "+cantidadTurnos());
     }
 
     

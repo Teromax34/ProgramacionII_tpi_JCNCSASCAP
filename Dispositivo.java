@@ -41,10 +41,10 @@ public class Dispositivo{
         this.tipo = tipo;
     }
 
-
+    //ver historial de reparacion, si 2 dispositivos tienen el mismo numeroSerie mostrar un resumen
 
     public void verDispositivo(){
-        System.out.println("ID:"+id);
+        System.out.println("------------------\nID:"+id);
         System.out.println("Tipo:"+tipo);
         System.out.println("Marca:"+marca);
         System.out.println("Modelo:"+modelo);

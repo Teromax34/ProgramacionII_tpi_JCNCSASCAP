@@ -4,14 +4,16 @@ public class Turno{
     private int horaIngreso;
     private String fechaEntrega;
     private int horaEntrega;
-    private String estado;
+    private boolean envio;
+    private EstadoTurno estado;
     private Cliente clientes;
     private Dispositivo dispositivos;
     private Servicio servicios;
     private Empleado empleados;
+    private Cadete cadete;
     
-    public Turno(int id,String fechaIngreso,int horaIngreso,String fechaEntrega,int horaEntrega,String estado,
-    Cliente cliente,Dispositivo dispositivo,Servicio servicio, Empleado empleado)
+    public Turno(int id,String fechaIngreso,int horaIngreso,String fechaEntrega,int horaEntrega,EstadoTurno estado,
+    Cliente cliente,Dispositivo dispositivo,Servicio servicio, Empleado empleado,boolean envio,Cadete cadete)
     {
         this.id = id;
         this.fechaIngreso = fechaIngreso;
@@ -23,27 +25,24 @@ public class Turno{
         this.dispositivos = dispositivo;
         this.servicios = servicio;
         this.empleados = empleado;
+        this.envio = envio;
+        if(this.envio == true){
+            this.cadete = cadete;
+        }else{
+            this.cadete = null;
+        }
     }
     public int idT(){
         return id;
     }
-    public String verificarEstado(){
-        return estado;
+
+    public EstadoTurno estado(){
+        return this.estado;
     }
 
 
-    public void cambiarEstado(String nuevoEstado){
-        switch (nuevoEstado) {
-            case "pendiente":
-            case "realizado":
-            case "confirmado":
-            case "cancelado":
-                this.estado = nuevoEstado;
-                break; 
-            default:
-                System.out.println("Error, volver a ingresar");
-                break;
-        }
+    public void cambiarEstado(EstadoTurno nuevoEstado){
+        this.estado = nuevoEstado;
     }
     public void cambiarFechaEntrega(String nuevaFecha){
                 this.fechaEntrega = nuevaFecha;
@@ -61,12 +60,13 @@ public class Turno{
     }
     
     public void resumenTurno(){
-        System.out.println("------------------\nTURNO\nDni:" + clientes.dniC());
-        System.out.println("Nombre y Apellido:" + clientes.nombreC()+" "+ clientes.apellidoC());
-        System.out.println("Empleado que realizo la reparacion:" + empleados.nombreE()+" "+empleados.apellidoE());
+        System.out.println("------------------\nTURNO\nDni:" + clientes.dni());
+        System.out.println("Nombre y Apellido:" + clientes.nombre()+" "+ clientes.apellido());
+        System.out.println("Empleado que realizo la reparacion:" + empleados.nombre()+" "+empleados.apellido());
         System.out.println("Modelo del Dispositivo:" + dispositivos.modeloD());
         System.out.println("Falla:" + dispositivos.fallaD());
         System.out.println("Estado:" + estado);
-        System.out.println("ID Dispositivo :" + dispositivos.idD()+" ID Servicio :"+servicios.idS()+"\n------------------");
+        System.out.println("ID Dispositivo:" + dispositivos.idD()+" - ID Servicio:"+servicios.idS());
+        System.out.println("Envio:"+envio+" | DNI del cadete:"+cadete.dni()+" | Direccion de envio:"+cadete.direccion());
     }
 }

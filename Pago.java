@@ -14,19 +14,19 @@ public class Pago{
         this.descuento = descuento;
         this.fecha=fecha;
         this.medioPago=medioPago;
+        this.estado = estado;
         this.turnos=turno;
     }
     
     public double montoTotal(){
             return montoAdicional + turnos.verServicio().precioS();
     }
-    public double aplicarDescuentos(){
+    public double montoFinalDescuento(){
         return montoTotal() * (1-(descuento / 100));
     }
     public Turno verTurno(){
         return this.turnos;
     }
-
 
     public void cambiarMontoAdicional(double montoAdicional){
         this.montoAdicional = montoAdicional;
@@ -43,12 +43,12 @@ public class Pago{
 
     
     public void Factura(){
-        System.out.println("FACTURA DE PAGO\nDni:" + turnos.verCliente().dniC());
-        System.out.println("Nombre y Apellido:" + turnos.verCliente().nombreC()+" "+turnos.verCliente().apellidoC());
-        System.out.println("Direccion:" + turnos.verCliente().direccionC());
+        System.out.println("------------------\nFACTURA DE PAGO\nDni:" + turnos.verCliente().dni());
+        System.out.println("Nombre y Apellido:" + turnos.verCliente().nombre()+" "+turnos.verCliente().apellido());
+        System.out.println("Direccion:" + turnos.verCliente().direccion());
         System.out.println("Fecha:"+fecha);
         System.out.println("Medio de Pago:"+medioPago);
         System.out.println("Monto Total:" + montoTotal());
-        System.out.println("Monto Total con Descuento:" + aplicarDescuentos()+"\n");
+        System.out.println("Monto Total con Descuento:" + montoFinalDescuento()+"\n");
     }
 }
