@@ -47,7 +47,14 @@ public class GestionEmpresa {
             }
         }
     }
-    
+    public void gastosEnSueldo(){
+        double sueldoTotal = 0;
+        for(Empleado e: empleados){
+            sueldoTotal += e.sueldoE();
+        }
+        System.out.println("El gasto total de sueldo de la empresa es de: "+sueldoTotal);
+    }
+
     public void clientesTotales(){
         int contC = 0;
         for(Cliente c:clientes){
@@ -153,4 +160,3 @@ public class GestionEmpresa {
         }
     }
 }
-

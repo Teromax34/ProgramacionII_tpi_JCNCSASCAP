@@ -2,11 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 public class Empleado extends Persona{
     private String especialidad;
+    private double sueldo;
     private List<Turno> turnos = new ArrayList<>();
 
-    public Empleado(int dni,String nombre,String apellido,int telefono,String especialidad){
+    public Empleado(int dni,String nombre,String apellido,int telefono,String especialidad,double sueldo){
         super(dni, nombre, apellido, telefono);
         this.especialidad = especialidad;
+        this.sueldo = sueldo;
     }
     public void agregarTurno(Turno... turnos){
         for(Turno t: turnos){
@@ -25,6 +27,13 @@ public class Empleado extends Persona{
     public String especialidadE(){
         return especialidad;
     }
+    public double sueldoE(){
+        return sueldo;
+    }
+    
+    public void cambiarSueldo(double nuevoSueldo){
+        this.sueldo = nuevoSueldo;
+    }
 
 
     public void cambiarEspecialidad(String nuevaEspecialidad){
@@ -36,7 +45,6 @@ public class Empleado extends Persona{
         System.out.println("Telefono: "+telefono());
         System.out.println("Especialidad: "+especialidad);
         System.out.println("Cantidad de Turnos: "+cantidadTurnos());
+        System.out.println("Sueldo:"+sueldo);
     }
-
-    
 }

@@ -51,6 +51,15 @@ public class Turno{
                 this.horaEntrega = nuevaHora;
     }
 
+    public void setEnvio(boolean envio) {
+        this.envio = envio;
+        if (envio) {
+            this.cadete = cadete;
+        } else {
+            this.cadete = null;
+        }
+    }
+
 
     public Cliente verCliente(){
         return this.clientes;
@@ -58,6 +67,16 @@ public class Turno{
     public Servicio verServicio(){
         return this.servicios;
     }
+    public Dispositivo verDispositivo() {
+        return dispositivos;
+    }
+    public Empleado vetEmpleado() {
+        return empleados;
+    }
+     public Cadete verCadete() {
+        return cadete;
+    }
+
     
     public void resumenTurno(){
         System.out.println("------------------\nTURNO\nDni:" + clientes.dni());
@@ -67,6 +86,9 @@ public class Turno{
         System.out.println("Falla:" + dispositivos.fallaD());
         System.out.println("Estado:" + estado);
         System.out.println("ID Dispositivo:" + dispositivos.idD()+" - ID Servicio:"+servicios.idS());
-        System.out.println("Envio:"+envio+" | DNI del cadete:"+cadete.dni()+" | Direccion de envio:"+cadete.direccion());
+        System.out.println("ENVIO\nDNI del cadete:"+cadete.dni()+" | Direccion de envio:"+clientes.direccion());
+        if (envio) {
+            System.out.println("Cadete: " + cadete.nombre() + " " + cadete.apellido());
+        }
     }
 }

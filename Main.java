@@ -19,13 +19,14 @@ public class Main {
         );
 
         Empleado e = new Empleado(
-            10, "Ana", "Gomez", 2222, "Tecnica"
+            10, "Ana", "Gomez", 2222, "Tecnica",20000
         );
         Empleado e2 = new Empleado(
-            10, "lop", "Gomez", 344, "Reparar"
+            10, "lop", "Gomez", 344, "Reparar",1000
         );
-        Cadete ca1 = new Cadete(30, "juan","aass", 12330, 2330, "SanJuan");
 
+        Cadete ca1 = new Cadete(23,"ss","hola",3534,9.2,c2);
+        
         Turno t1 = new Turno(
             200, "20/09/2026", 10, "25/09/2026", 15,
             EstadoTurno.PENDIENTE, c2, d, s, e,true,ca1
