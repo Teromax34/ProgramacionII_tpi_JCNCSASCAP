@@ -4,16 +4,14 @@ public class Turno{
     private int horaIngreso;
     private String fechaEntrega;
     private int horaEntrega;
-    private boolean envio;
     private EstadoTurno estado;
     private Cliente clientes;
     private Dispositivo dispositivos;
     private Servicio servicios;
     private Empleado empleados;
-    private Cadete cadete;
     
     public Turno(int id,String fechaIngreso,int horaIngreso,String fechaEntrega,int horaEntrega,EstadoTurno estado,
-    Cliente cliente,Dispositivo dispositivo,Servicio servicio, Empleado empleado,boolean envio,Cadete cadete)
+    Cliente cliente,Dispositivo dispositivo,Servicio servicio, Empleado empleado)
     {
         this.id = id;
         this.fechaIngreso = fechaIngreso;
@@ -25,12 +23,6 @@ public class Turno{
         this.dispositivos = dispositivo;
         this.servicios = servicio;
         this.empleados = empleado;
-        this.envio = envio;
-        if(this.envio == true){
-            this.cadete = cadete;
-        }else{
-            this.cadete = null;
-        }
     }
     public int idT(){
         return id;
@@ -49,15 +41,6 @@ public class Turno{
     }
     public void cambiarHoraEntrega(int nuevaHora){
                 this.horaEntrega = nuevaHora;
-    }
-
-    public void setEnvio(boolean envio) {
-        this.envio = envio;
-        if (envio) {
-            this.cadete = cadete;
-        } else {
-            this.cadete = null;
-        }
     }
 
 

@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Empleado extends Persona{
-    private String especialidad;
+    private EspecialidadEmpleado especialidad;
     private double sueldo;
     private List<Turno> turnos = new ArrayList<>();
 
-    public Empleado(int dni,String nombre,String apellido,int telefono,String especialidad,double sueldo){
+    public Empleado(int dni,String nombre,String apellido,int telefono,EspecialidadEmpleado especialidad,double sueldo){
         super(dni, nombre, apellido, telefono);
         this.especialidad = especialidad;
         this.sueldo = sueldo;
@@ -24,7 +24,7 @@ public class Empleado extends Persona{
         return this.turnos.size();
     }
     
-    public String especialidadE(){
+    public EspecialidadEmpleado especialidadE(){
         return especialidad;
     }
     public double sueldoE(){

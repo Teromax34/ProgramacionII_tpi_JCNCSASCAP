@@ -19,25 +19,23 @@ public class Main {
         );
 
         Empleado e = new Empleado(
-            10, "Ana", "Gomez", 2222, "Tecnica",20000
+            10, "Ana", "Gomez", 2222,EspecialidadEmpleado.SOFTWARE,20000
         );
         Empleado e2 = new Empleado(
-            10, "lop", "Gomez", 344, "Reparar",1000
+            10, "lop", "Gomez", 344,EspecialidadEmpleado.PANTALLA,1000
         );
-
-        Cadete ca1 = new Cadete(23,"ss","hola",3534,9.2,c2);
         
         Turno t1 = new Turno(
             200, "20/09/2026", 10, "25/09/2026", 15,
-            EstadoTurno.PENDIENTE, c2, d, s, e,true,ca1
+            EstadoTurno.PENDIENTE, c2, d, s, e
         );    
         Turno t2 = new Turno(
             2, "20/09/2026", 10, "25/09/2026", 15,
-            EstadoTurno.CONFIRMADO, c2, d, s, e2,false,null
+            EstadoTurno.CONFIRMADO, c2, d, s, e2
         );    
         Turno t3 = new Turno(
-            3, "20/09/2026", 10, "25/09/2026", 15,
-            EstadoTurno.CANCELADO, c3, d2, s2, e2,false,null
+            3, "20/09/2026", 10, "25/09/2026", 15
+            EstadoTurno.CANCELADO, c3, d2, s2, e2
         );    
     
         Pago p = new Pago(
