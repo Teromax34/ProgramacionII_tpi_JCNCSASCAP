@@ -24,7 +24,6 @@ public class Dispositivo{
         return descripcionFalla;
     }
 
-
     public void NuevaDescripcionFalla(String nuevaFalla){
         this.descripcionFalla = nuevaFalla;
     }
@@ -41,14 +40,12 @@ public class Dispositivo{
         this.tipo = tipo;
     }
 
-    //ver historial de reparacion, si 2 dispositivos tienen el mismo numeroSerie mostrar un resumen
-
     public void verDispositivo(){
         System.out.println("------------------\nID:"+id);
         System.out.println("Tipo:"+tipo);
         System.out.println("Marca:"+marca);
         System.out.println("Modelo:"+modelo);
         System.out.println("Numero de Serie:"+numeroSerie);
-        System.out.println("Descripcion de la Falla:"+descripcionFalla);
+        System.out.println("Descripcion de la Falla:"+descripcionFalla+"\n------------------");
     }
 }

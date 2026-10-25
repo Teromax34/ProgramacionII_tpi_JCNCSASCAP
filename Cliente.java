@@ -5,9 +5,9 @@ public class Cliente extends Persona{
     private String direccion;
     private List<Turno> turnos = new ArrayList<>();
     //private List<Dispositivo> dispositivos = new ArrayList<>();
-    public Cliente(int dni,String nombre,String apellido,int telefono,String direccion)
+    public Cliente(int dni,String nombreCompleto,int telefono,String direccion)
     {
-        super(dni, nombre, apellido, telefono);
+        super(dni,nombreCompleto, telefono);
         this.direccion = direccion;
     }
     /*public List<Turno> getTurno(){
@@ -55,10 +55,10 @@ public class Cliente extends Persona{
 
     public void verDatosCliente(){
         System.out.println("------------------\nDATOS DEL CLIENTE\nDNI:"+dni());
-        System.out.println("Nombre y Apellido:"+nombre()+" "+apellido());
+        System.out.println("Nombre y Apellido:"+nombreCompleto());
         System.out.println("Telefono:"+telefono());
         System.out.println("Direccion:"+direccion);
-        System.out.println("El cliente tiene: "+cantidadTurnos()+" Turnos");
+        System.out.println("El cliente tiene: "+cantidadTurnos()+" Turnos"+"\n------------------");
 
     }
 }

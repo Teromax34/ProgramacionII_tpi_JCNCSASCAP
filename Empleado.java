@@ -5,8 +5,8 @@ public class Empleado extends Persona{
     private double sueldo;
     private List<Turno> turnos = new ArrayList<>();
 
-    public Empleado(int dni,String nombre,String apellido,int telefono,EspecialidadEmpleado especialidad,double sueldo){
-        super(dni, nombre, apellido, telefono);
+    public Empleado(int dni,String nombreCompleto,int telefono,EspecialidadEmpleado especialidad,double sueldo){
+        super(dni, nombreCompleto, telefono);
         this.especialidad = especialidad;
         this.sueldo = sueldo;
     }
@@ -36,15 +36,14 @@ public class Empleado extends Persona{
     }
 
 
-    public void cambiarEspecialidad(String nuevaEspecialidad){
+    public void cambiarEspecialidad(EspecialidadEmpleado nuevaEspecialidad){
         this.especialidad = nuevaEspecialidad;
     }
     public void datosEmpleado(){
         System.out.println("------------------\nDni: "+dni());
-        System.out.println("Nombre y Apellido:"+nombre()+" "+apellido());
+        System.out.println("Nombre y Apellido:"+nombreCompleto());
         System.out.println("Telefono: "+telefono());
         System.out.println("Especialidad: "+especialidad);
-        System.out.println("Cantidad de Turnos: "+cantidadTurnos());
-        System.out.println("Sueldo:"+sueldo);
+        System.out.println("Cantidad de Turnos: "+cantidadTurnos()+"\n------------------");
     }
 }

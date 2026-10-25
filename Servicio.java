@@ -16,12 +16,12 @@ public class Servicio{
         this.dispositivos = dispositivo;
     }
     public void verServicio(){
-        System.out.println("ID: "+id);
+        System.out.println("\n------------------"+"ID: "+id);
         System.out.println("Nombre: "+nombre);
         System.out.println("Descripcion: "+descripcion);
         System.out.println("Precio: "+precio);
         System.out.println("Duracion Estimada: "+duracionEstimada);
-        System.out.println("ID Dispositivo: "+dispositivos.idD());
+        System.out.println("ID Dispositivo: "+dispositivos.idD()+"\n------------------");
     }
     public int idS(){
         return id;
@@ -43,5 +43,4 @@ public class Servicio{
     public void cambiarDuracion(int duracionEstimada){
         this.duracionEstimada = duracionEstimada;
     }
-
 }

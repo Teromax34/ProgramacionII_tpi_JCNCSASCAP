@@ -1,12 +1,13 @@
+import java.time.LocalDate;
 public class Pago{
     private int id;
     private double montoAdicional;
     private double descuento;
-    private String fecha;
+    private LocalDate fecha;
     private String medioPago;
     private String estado;
     private Turno turnos;
-    public Pago(int id,double montoAdicional,double descuento,String fecha,String medioPago,
+    public Pago(int id,double montoAdicional,double descuento,LocalDate fecha,String medioPago,
     String estado,Turno turno)
     {
         this.id = id;
@@ -27,6 +28,9 @@ public class Pago{
     public Turno verTurno(){
         return this.turnos;
     }
+    public int idP(){
+        return  id;
+    }
 
     public void cambiarMontoAdicional(double montoAdicional){
         this.montoAdicional = montoAdicional;
@@ -44,11 +48,11 @@ public class Pago{
     
     public void Factura(){
         System.out.println("------------------\nFACTURA DE PAGO\nDni:" + turnos.verCliente().dni());
-        System.out.println("Nombre y Apellido:" + turnos.verCliente().nombre()+" "+turnos.verCliente().apellido());
+        System.out.println("Nombre y Apellido:" + turnos.verCliente().nombreCompleto());
         System.out.println("Direccion:" + turnos.verCliente().direccion());
         System.out.println("Fecha:"+fecha);
         System.out.println("Medio de Pago:"+medioPago);
         System.out.println("Monto Total:" + montoTotal());
-        System.out.println("Monto Total con Descuento:" + montoFinalDescuento()+"\n");
+        System.out.println("Monto Total con Descuento:" + montoFinalDescuento()+"\n------------------");
     }
 }
