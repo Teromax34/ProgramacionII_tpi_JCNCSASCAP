@@ -5,7 +5,7 @@ public class Cliente extends Persona{
     private String direccion;
     private List<Turno> turnos = new ArrayList<>();
     //private List<Dispositivo> dispositivos = new ArrayList<>();
-    public Cliente(int dni,String nombreCompleto,int telefono,String direccion)
+    public Cliente(int dni,String nombreCompleto,String telefono,String direccion)
     {
         super(dni,nombreCompleto, telefono);
         this.direccion = direccion;
@@ -28,6 +28,9 @@ public class Cliente extends Persona{
         for(Turno t: turnos){
             this.turnos.add(t);
         }
+    }
+    public Cliente(int dni) {
+    super(dni);
     }
     /*public void agregarDispositivo(Dispositivo... dispositivos){
         for(Dispositivo d: dispositivos){
@@ -60,5 +63,21 @@ public class Cliente extends Persona{
         System.out.println("Direccion:"+direccion);
         System.out.println("El cliente tiene: "+cantidadTurnos()+" Turnos"+"\n------------------");
 
+    }
+    public String convertirALineaArchivo() {
+        return dni() + ";" + nombreCompleto() + ";" + telefono() + ";" + direccion;
+    }
+    public static Cliente crearDesdeLinea(String linea) {
+        String[] datos = linea.split(";");
+        int dni = Integer.parseInt(datos[0]);
+        String nombreC = datos[1];
+        String telefono = datos[2];
+        String direccion = datos[3];
+        
+        return new Cliente(dni, nombreC, telefono, direccion);
+    }
+    @Override
+    public String toString() {
+        return dni() + ";" + nombreCompleto() + ";" + telefono() + ";" + direccion;
     }
 }

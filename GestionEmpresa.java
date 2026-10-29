@@ -36,16 +36,24 @@ public class GestionEmpresa {
         System.out.println("El monto total que facturo la empresa es de: "+montoFinal);
     }
     public void pagoMasAlto(){
-        double servicioCaro = 0;
+        Pago pagoMasAlto = null;
+        double montoMasAlto = Double.NEGATIVE_INFINITY;
         for(Pago p: pagos){
-            for(Turno t: turnos){
-                if(p.montoFinalDescuento() > servicioCaro){
-                servicioCaro = p.montoFinalDescuento();
-                t.resumenTurno();
-                p.Factura();
-                }
+            double montoPago = p.montoFinalDescuento();
+            if(montoPago > montoMasAlto){
+                montoMasAlto = montoPago;
+                pagoMasAlto = p;
             }
         }
+        if(pagoMasAlto == null){
+            System.out.println("No hay pagos registrados.");
+            return;
+        }
+        if(pagoMasAlto.verTurno() == null){
+            throw new IllegalStateException("El pago no tiene un turno asociado.");
+        }
+        pagoMasAlto.verTurno().resumenTurno();
+        pagoMasAlto.Factura();
     }
     public void gastosEnSueldo(){
         double sueldoTotal = 0;
@@ -54,7 +62,7 @@ public class GestionEmpresa {
         }
         System.out.println("El gasto total de sueldo de la empresa es de: "+sueldoTotal);
     }
-
+    
     public void clientesTotales(){
         int contC = 0;
         for(Cliente c:clientes){

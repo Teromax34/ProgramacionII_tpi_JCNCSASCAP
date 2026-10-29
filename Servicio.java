@@ -43,4 +43,27 @@ public class Servicio{
     public void cambiarDuracion(int duracionEstimada){
         this.duracionEstimada = duracionEstimada;
     }
+    public Servicio(int id) {
+    this.id = id;
+    }
+
+    public String convertirALineaArchivo() {
+        return id + ";" + nombre + ";" + descripcion + ";" + precio + ";" + duracionEstimada + ";" + dispositivos.idD();
+    }
+    public static Servicio crearDesdeLinea(String linea) {
+        String[] datos = linea.split(";");
+        int id = Integer.parseInt(datos[0]);
+        String nombre = datos[1];
+        String descripcion = datos[2];
+        double sueldo = Double.parseDouble(datos[3]);
+        int duracionEstimada = Integer.parseInt(datos[4]);
+        int idDispositivo = Integer.parseInt(datos[5]);
+        Dispositivo dispositivo = new Dispositivo(idDispositivo);
+    
+        return new Servicio(id, nombre, descripcion, sueldo,duracionEstimada,dispositivo);
+    }
+    @Override
+    public String toString() {
+        return id + ";" + nombre + ";" + descripcion + ";" + precio + ";" + duracionEstimada + ";" + dispositivos.idD();
+    }
 }

@@ -1,9 +1,9 @@
 public class Persona {
     private int dni;
     private String nombreCompleto;
-    private int telefono;
+    private String telefono;
 
-    public Persona(int dni,String nombreCompleto,int telefono){
+    public Persona(int dni,String nombreCompleto,String telefono){
         this.dni = dni;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
@@ -15,12 +15,15 @@ public class Persona {
         return nombreCompleto;
     }
 
-    public int telefono(){
+    public String telefono(){
         return telefono;
+    }
+    public Persona(int dni) {
+    this.dni = dni;
     }
 
 
-    public void cambiarTelefono(int nuevoTelefono){
+    public void cambiarTelefono(String nuevoTelefono){
         this.telefono = nuevoTelefono;
     }
     public void cambiarNombre(String nuevoNombre){

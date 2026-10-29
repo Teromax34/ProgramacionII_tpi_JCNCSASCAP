@@ -39,6 +39,9 @@ public class Dispositivo{
     public void cambiarTipo(String tipo){
         this.tipo = tipo;
     }
+    public Dispositivo(int id) {
+    this.id = id;
+        }
 
     public void verDispositivo(){
         System.out.println("------------------\nID:"+id);
@@ -47,5 +50,26 @@ public class Dispositivo{
         System.out.println("Modelo:"+modelo);
         System.out.println("Numero de Serie:"+numeroSerie);
         System.out.println("Descripcion de la Falla:"+descripcionFalla+"\n------------------");
+    }
+
+    public String convertirALineaArchivo() {
+        return id + ";" + tipo + ";" + marca + ";" + modelo + ";" + numeroSerie + ";" + descripcionFalla;
+    }
+    public static Dispositivo crearDesdeLinea(String linea) {
+        String[] datos = linea.split(";");
+        int id = Integer.parseInt(datos[0]);
+        String tipo = datos[1];
+        String marca = datos[2];
+        String modelo = datos[3];
+        String numeroSerie = datos[4];
+        String descripcionF = datos[5];
+        
+        
+    
+        return new Dispositivo(id, tipo, marca, modelo,numeroSerie,descripcionF);
+    }
+    @Override
+    public String toString() {
+        return id + ";" + tipo + ";" + marca + ";" + modelo + ";" + numeroSerie + ";" + descripcionFalla;
     }
 }
